@@ -2,23 +2,38 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, install [@rocketseat/eslint-config](https://github.com/Rocketseat/eslint-config-rocketseat) like devDependency:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm i -D eslint @rocketseat/eslint-config
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Second, in the .eslintrc.json file do the following:
+```bash
+{
+  "extends": [
+    "next/core-web-vitals",
+    "@rocketseat/eslint-config/next"
+    ]
+}
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+After that, install the [prettier-plugin-tailwindcss](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier) devDependency:
+```bash
+npm install -D prettier-plugin-tailwindcss
+```
+Create a file in the root of the project called "prettier.config.js" and paste this:
+```bash
+module.exports = {
+  plugins: [require('prettier-plugin-tailwindcss')],
+}
+```
+
+Now reload window and you can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Learn More Next.js
 
 To learn more about Next.js, take a look at the following resources:
 
